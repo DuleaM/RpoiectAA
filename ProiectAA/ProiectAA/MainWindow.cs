@@ -16,8 +16,8 @@ public partial class MainWindow : Gtk.Window
 
     protected void startButton_OnClick(object sender, EventArgs e)
     {
-        MessageDialog dialog = new MessageDialog(this, DialogFlags.DestroyWithParent, MessageType.Question, ButtonsType.YesNo, "Dialog text");
+        //MessageDialog dialog = new MessageDialog(this, DialogFlags.DestroyWithParent, MessageType.Question, ButtonsType.YesNo, "Aolo ai belit pula");
 
-        dialog.Run();
+        //dialog.Run();
     }
 }
