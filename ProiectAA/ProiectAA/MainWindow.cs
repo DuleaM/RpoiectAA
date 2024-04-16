@@ -13,4 +13,11 @@ public partial class MainWindow : Gtk.Window
         Application.Quit();
         a.RetVal = true;
     }
+
+    protected void startButton_OnClick(object sender, EventArgs e)
+    {
+        MessageDialog dialog = new MessageDialog(this, DialogFlags.DestroyWithParent, MessageType.Question, ButtonsType.YesNo, "Dialog text");
+
+        dialog.Run();
+    }
 }

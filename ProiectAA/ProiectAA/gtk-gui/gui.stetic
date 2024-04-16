@@ -6,13 +6,30 @@
   <import>
     <widget-library name="../bin/Debug/ProiectAA.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
+  <widget class="Gtk.Window" id="MainWindow" design-size="602 430">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
-      <placeholder />
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Button" id="startButton">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Start</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="startButton_OnClick" />
+          </widget>
+          <packing>
+            <property name="X">70</property>
+            <property name="Y">63</property>
+          </packing>
+        </child>
+      </widget>
     </child>
   </widget>
 </stetic-interface>
