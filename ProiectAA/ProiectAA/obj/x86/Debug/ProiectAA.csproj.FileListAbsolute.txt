@@ -1,0 +1,6 @@
+/home/dulea/Documents/University/ProiectF/ProiectAA/ProiectAA/bin/Debug/ProiectAA.exe
+/home/dulea/Documents/University/ProiectF/ProiectAA/ProiectAA/bin/Debug/ProiectAA.pdb
+/home/dulea/Documents/University/ProiectF/ProiectAA/ProiectAA/obj/x86/Debug/ProiectAA.csproj.AssemblyReference.cache
+/home/dulea/Documents/University/ProiectF/ProiectAA/ProiectAA/obj/x86/Debug/ProiectAA.csproj.CoreCompileInputs.cache
+/home/dulea/Documents/University/ProiectF/ProiectAA/ProiectAA/obj/x86/Debug/ProiectAA.exe
+/home/dulea/Documents/University/ProiectF/ProiectAA/ProiectAA/obj/x86/Debug/ProiectAA.pdb
