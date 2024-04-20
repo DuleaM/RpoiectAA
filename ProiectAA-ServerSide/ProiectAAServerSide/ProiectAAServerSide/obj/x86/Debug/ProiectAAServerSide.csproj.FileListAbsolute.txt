@@ -1,0 +1,6 @@
+/home/licenta/AA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/bin/Debug/ProiectAAServerSide.exe
+/home/licenta/AA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/bin/Debug/ProiectAAServerSide.pdb
+/home/licenta/AA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Debug/ProiectAAServerSide.csproj.AssemblyReference.cache
+/home/licenta/AA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Debug/ProiectAAServerSide.csproj.CoreCompileInputs.cache
+/home/licenta/AA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Debug/ProiectAAServerSide.exe
+/home/licenta/AA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Debug/ProiectAAServerSide.pdb
