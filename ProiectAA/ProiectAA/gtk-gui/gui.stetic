@@ -6,7 +6,7 @@
   <import>
     <widget-library name="../bin/Debug/ProiectAA.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="1431 633">
+  <widget class="Gtk.Window" id="MainWindow" design-size="823 408">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -26,20 +26,6 @@
           <packing>
             <property name="X">72</property>
             <property name="Y">11</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Button" id="startButton">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">Start</property>
-            <property name="UseUnderline">True</property>
-            <signal name="Clicked" handler="startButton_OnClick" />
-          </widget>
-          <packing>
-            <property name="X">1354</property>
-            <property name="Y">602</property>
           </packing>
         </child>
         <child>
@@ -373,6 +359,20 @@ wave5.ss</property>
           <packing>
             <property name="X">584</property>
             <property name="Y">9</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="startButton">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Start</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="startButton_OnClick" />
+          </widget>
+          <packing>
+            <property name="X">760</property>
+            <property name="Y">11</property>
           </packing>
         </child>
       </widget>

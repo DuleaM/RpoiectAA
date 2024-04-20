@@ -24,5 +24,17 @@ namespace ProiectAA
             client.Close();
             stream.Close();
         }
+
+        public static void send_command_to_server(string command)
+        {
+            streamWriter.WriteLine(command);
+            streamWriter.Flush();
+        }
+
+        public static string get_output_from_server()
+        {
+            string output = streamReader.ReadLine();
+            return output;
+        }
     }
 }

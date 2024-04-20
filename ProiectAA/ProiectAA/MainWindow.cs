@@ -68,7 +68,7 @@ public partial class MainWindow : Gtk.Window
             blocksize_textbox.Text = "32";
             asoc_textbox.Text = "4";
         }
-        else if (cache_type.Equals("dl2")){
+        else if (cache_type.Equals("ul2")){
             sets_textbox.Text = "1024";
             blocksize_textbox.Text = "64";
             asoc_textbox.Text = "4";
