@@ -7,7 +7,7 @@ namespace ProiectAA
             return "";
         }
 
-        public string Instructions { get; set; }
+        public string NrInstructions { get; set; }
+        public string CacheType { get; set; }
     }
 }
-//-fetch:ifqsize 16 -fetch:mplat 3 -decode:width 4 -issue:width 4

@@ -66,7 +66,7 @@
           <widget class="Gtk.Entry" id="port_textbox">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
-            <property name="Text" translatable="yes">800</property>
+            <property name="Text" translatable="yes">8000</property>
             <property name="IsEditable">True</property>
             <property name="InvisibleChar">•</property>
           </widget>
@@ -102,10 +102,81 @@
             <property name="Items" translatable="yes">dl1
 dl2
 il1</property>
+            <property name="Active">0</property>
+            <signal name="Changed" handler="CacheType_onChange" />
           </widget>
           <packing>
             <property name="X">90</property>
             <property name="Y">119</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label5">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Sets</property>
+          </widget>
+          <packing>
+            <property name="X">13</property>
+            <property name="Y">179</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="sets_textbox">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">128</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">97</property>
+            <property name="Y">169</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="blocksize_textbox">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">32</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">97</property>
+            <property name="Y">213</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label6">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Block Size</property>
+          </widget>
+          <packing>
+            <property name="X">13</property>
+            <property name="Y">218</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="asoc_textbox">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">4</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">97</property>
+            <property name="Y">259</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label7">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Asociativity</property>
+          </widget>
+          <packing>
+            <property name="X">15</property>
+            <property name="Y">264</property>
           </packing>
         </child>
       </widget>

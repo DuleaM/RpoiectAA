@@ -21,6 +21,18 @@ public partial class MainWindow
 
 	private global::Gtk.ComboBox cache_type_combobox;
 
+	private global::Gtk.Label label5;
+
+	private global::Gtk.Entry sets_textbox;
+
+	private global::Gtk.Entry blocksize_textbox;
+
+	private global::Gtk.Label label6;
+
+	private global::Gtk.Entry asoc_textbox;
+
+	private global::Gtk.Label label7;
+
 	protected virtual void Build()
 	{
 		global::Stetic.Gui.Initialize(this);
@@ -73,7 +85,7 @@ public partial class MainWindow
 		this.port_textbox = new global::Gtk.Entry();
 		this.port_textbox.CanFocus = true;
 		this.port_textbox.Name = "port_textbox";
-		this.port_textbox.Text = global::Mono.Unix.Catalog.GetString("800");
+		this.port_textbox.Text = global::Mono.Unix.Catalog.GetString("8000");
 		this.port_textbox.IsEditable = true;
 		this.port_textbox.InvisibleChar = '•';
 		this.fixed1.Add(this.port_textbox);
@@ -102,10 +114,68 @@ public partial class MainWindow
 		this.cache_type_combobox.AppendText(global::Mono.Unix.Catalog.GetString("dl2"));
 		this.cache_type_combobox.AppendText(global::Mono.Unix.Catalog.GetString("il1"));
 		this.cache_type_combobox.Name = "cache_type_combobox";
+		this.cache_type_combobox.Active = 0;
 		this.fixed1.Add(this.cache_type_combobox);
 		global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.cache_type_combobox]));
 		w8.X = 90;
 		w8.Y = 119;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.label5 = new global::Gtk.Label();
+		this.label5.Name = "label5";
+		this.label5.LabelProp = global::Mono.Unix.Catalog.GetString("Sets");
+		this.fixed1.Add(this.label5);
+		global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label5]));
+		w9.X = 13;
+		w9.Y = 179;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.sets_textbox = new global::Gtk.Entry();
+		this.sets_textbox.CanFocus = true;
+		this.sets_textbox.Name = "sets_textbox";
+		this.sets_textbox.Text = global::Mono.Unix.Catalog.GetString("128");
+		this.sets_textbox.IsEditable = true;
+		this.sets_textbox.InvisibleChar = '•';
+		this.fixed1.Add(this.sets_textbox);
+		global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.sets_textbox]));
+		w10.X = 97;
+		w10.Y = 169;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.blocksize_textbox = new global::Gtk.Entry();
+		this.blocksize_textbox.CanFocus = true;
+		this.blocksize_textbox.Name = "blocksize_textbox";
+		this.blocksize_textbox.Text = global::Mono.Unix.Catalog.GetString("32");
+		this.blocksize_textbox.IsEditable = true;
+		this.blocksize_textbox.InvisibleChar = '•';
+		this.fixed1.Add(this.blocksize_textbox);
+		global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.blocksize_textbox]));
+		w11.X = 97;
+		w11.Y = 213;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.label6 = new global::Gtk.Label();
+		this.label6.Name = "label6";
+		this.label6.LabelProp = global::Mono.Unix.Catalog.GetString("Block Size");
+		this.fixed1.Add(this.label6);
+		global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label6]));
+		w12.X = 13;
+		w12.Y = 218;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.asoc_textbox = new global::Gtk.Entry();
+		this.asoc_textbox.CanFocus = true;
+		this.asoc_textbox.Name = "asoc_textbox";
+		this.asoc_textbox.Text = global::Mono.Unix.Catalog.GetString("4");
+		this.asoc_textbox.IsEditable = true;
+		this.asoc_textbox.InvisibleChar = '•';
+		this.fixed1.Add(this.asoc_textbox);
+		global::Gtk.Fixed.FixedChild w13 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.asoc_textbox]));
+		w13.X = 97;
+		w13.Y = 259;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.label7 = new global::Gtk.Label();
+		this.label7.Name = "label7";
+		this.label7.LabelProp = global::Mono.Unix.Catalog.GetString("Asociativity");
+		this.fixed1.Add(this.label7);
+		global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label7]));
+		w14.X = 15;
+		w14.Y = 264;
 		this.Add(this.fixed1);
 		if ((this.Child != null))
 		{
@@ -116,5 +186,6 @@ public partial class MainWindow
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
 		this.startButton.Clicked += new global::System.EventHandler(this.startButton_OnClick);
+		this.cache_type_combobox.Changed += new global::System.EventHandler(this.CacheType_onChange);
 	}
 }
