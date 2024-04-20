@@ -93,7 +93,7 @@ range_parse_pos(char *pstr,			/* execution position string */
   char *s, *endp;
   struct sym_sym_t *sym;
 #if !defined(__CYGWIN32__)
-  //extern int errno;
+//  extern int errno;
 #endif
 
   /* determine position type */

@@ -11,9 +11,9 @@ namespace ProiectAA
         private static StreamReader streamReader = null;
         private static StreamWriter streamWriter = null;
 
-        public static void start_connection()
+        public static void start_connection(string hostname, int port)
         {
-            client = new TcpClient("localhost", 8000);
+            client = new TcpClient(hostname, port);
             stream = client.GetStream();
             streamReader = new StreamReader(stream);
             streamWriter = new StreamWriter(stream);

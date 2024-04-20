@@ -116,7 +116,7 @@
  */
 
 /* don't count instructions flag, enabled by default, disable for inst count */
-//#undef NO_INSN_COUNT
+#undef NO_INSN_COUNT
 
 #ifdef __GNUC__
 /* faster dispatch mechanism, requires GNU GCC C extensions, CAVEAT: some
@@ -133,8 +133,6 @@
 #include "loader.h"
 #include "syscall.h"
 #include "dlite.h"
-#include "options.h"
-#include "stats.h"
 #include "sim.h"
 
 /* simulated registers */
@@ -142,8 +140,6 @@ static struct regs_t regs;
 
 /* simulated memory */
 static struct mem_t *mem = NULL;
-/* maximum number of inst's to execute */
-static unsigned int max_insts;
 
 #ifdef TARGET_ALPHA
 /* predecoded text memory */
@@ -163,10 +159,6 @@ sim_reg_options(struct opt_odb_t *odb)
 "causing sim-fast to execute incorrectly or dump core.  Such is the\n"
 "price we pay for speed!!!!\n"
 		 );
-/* instruction limit */
-  opt_reg_uint(odb, "-max:inst", "maximum number of inst's to execute",
-	       &max_insts, /* default */0,
-	       /* print */TRUE, /* format */NULL);
 }
 
 /* check simulator-specific option values */
@@ -181,19 +173,19 @@ sim_check_options(struct opt_odb_t *odb, int argc, char **argv)
 void
 sim_reg_stats(struct stat_sdb_t *sdb)
 {
-//#ifndef NO_INSN_COUNT
+#ifndef NO_INSN_COUNT
   stat_reg_counter(sdb, "sim_num_insn",
 		   "total number of instructions executed",
 		   &sim_num_insn, sim_num_insn, NULL);
-//#endif /* !NO_INSN_COUNT */
+#endif /* !NO_INSN_COUNT */
   stat_reg_int(sdb, "sim_elapsed_time",
 	       "total simulation time in seconds",
 	       &sim_elapsed_time, 0, NULL);
-//#ifndef NO_INSN_COUNT
+#ifndef NO_INSN_COUNT
   stat_reg_formula(sdb, "sim_inst_rate",
 		   "simulation speed (in insts/sec)",
 		   "sim_num_insn / sim_elapsed_time", NULL);
-//#endif /* !NO_INSN_COUNT */
+#endif /* !NO_INSN_COUNT */
   ld_reg_stats(sdb);
   mem_reg_stats(mem, sdb);
 #ifdef TARGET_ALPHA
@@ -353,11 +345,11 @@ sim_uninit(void)
 /* system call handler macro */
 #define SYSCALL(INST)	sys_syscall(&regs, mem_access, mem, INST, TRUE)
 
-//#ifndef NO_INSN_COUNT
-//#define INC_INSN_CTR()	sim_num_insn++
-//#else /* !NO_INSN_COUNT */
-//#define INC_INSN_CTR()	/* nada */
-//#endif /* NO_INSN_COUNT */
+#ifndef NO_INSN_COUNT
+#define INC_INSN_CTR()	sim_num_insn++
+#else /* !NO_INSN_COUNT */
+#define INC_INSN_CTR()	/* nada */
+#endif /* NO_INSN_COUNT */
 
 #ifdef TARGET_ALPHA
 #define ZERO_FP_REG()	regs.regs_F.d[MD_REG_ZERO] = 0.0
@@ -466,9 +458,9 @@ sim_main(void)
 #endif /* TARGET_ALPHA */
 
       /* keep an instruction count */
-//#ifndef NO_INSN_COUNT
+#ifndef NO_INSN_COUNT
       sim_num_insn++;
-//#endif /* !NO_INSN_COUNT */
+#endif /* !NO_INSN_COUNT */
 
 #ifdef TARGET_ALPHA
       /* load predecoded instruction */
@@ -504,10 +496,6 @@ sim_main(void)
       /* execute next instruction */
       regs.regs_PC = regs.regs_NPC;
       regs.regs_NPC += sizeof(md_inst_t);
-
-/* finish early? */
-      if (max_insts && sim_num_insn >= max_insts)
-	return;
     }
 
 #endif /* USE_JUMP_TABLE */

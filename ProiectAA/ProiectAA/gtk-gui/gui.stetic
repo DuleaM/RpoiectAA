@@ -6,7 +6,7 @@
   <import>
     <widget-library name="../bin/Debug/ProiectAA.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="602 430">
+  <widget class="Gtk.Window" id="MainWindow" design-size="1431 653">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -15,6 +15,19 @@
       <widget class="Gtk.Fixed" id="fixed1">
         <property name="MemberName" />
         <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Entry" id="hostname_textbox">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">127.0.0.1</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">72</property>
+            <property name="Y">11</property>
+          </packing>
+        </child>
         <child>
           <widget class="Gtk.Button" id="startButton">
             <property name="MemberName" />
@@ -25,8 +38,74 @@
             <signal name="Clicked" handler="startButton_OnClick" />
           </widget>
           <packing>
-            <property name="X">201</property>
-            <property name="Y">197</property>
+            <property name="X">1354</property>
+            <property name="Y">602</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Hostname</property>
+          </widget>
+          <packing>
+            <property name="X">7</property>
+            <property name="Y">17</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label2">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Port</property>
+          </widget>
+          <packing>
+            <property name="X">255</property>
+            <property name="Y">17</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="port_textbox">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">800</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">285</property>
+            <property name="Y">10</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label3">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Cache Properties</property>
+          </widget>
+          <packing>
+            <property name="X">6</property>
+            <property name="Y">90</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label4">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Cache type</property>
+          </widget>
+          <packing>
+            <property name="X">9</property>
+            <property name="Y">128</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBox" id="cache_type_combobox">
+            <property name="MemberName">t</property>
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes">dl1
+dl2
+il1</property>
+          </widget>
+          <packing>
+            <property name="X">90</property>
+            <property name="Y">119</property>
           </packing>
         </child>
       </widget>

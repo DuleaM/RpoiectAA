@@ -252,7 +252,7 @@ int
 myrand(void)			/* returns random number */
 {
 #if !defined(__alpha) && !defined(linux)
-  extern int random(void);
+  extern long random(void);
 #endif
 
 #if defined(__CYGWIN32__) || defined(hpux) || defined(__hpux) || defined(__svr4__) || defined(_MSC_VER)

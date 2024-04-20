@@ -328,8 +328,8 @@ CFLAGS = $(MFLAGS) $(FFLAGS) $(OFLAGS) $(BINUTILS_INC) $(BINUTILS_LIB)
 # all the sources
 #
 SRCS =	main.c sim-fast.c sim-safe.c sim-cache.c sim-profile.c \
-	sim-eio.c sim-bpred.c sim-cheetah.c sim-outorder.c \
-	memory.c regs.c cache.c bpred.c ptrace.c eventq.c \
+	sim-eio.c sim-bpred.c sim-cheetah.c sim-outorder.c sim-LVPred.c sim-spred.c \
+	memory.c regs.c cache.c bpred.c ptrace.c eventq.c LVPred.c spred.c \
 	resource.c endian.c dlite.c symbol.c eval.c options.c range.c \
 	eio.c stats.c endian.c misc.c \
 	target-pisa/pisa.c target-pisa/loader.c target-pisa/syscall.c \
@@ -337,7 +337,7 @@ SRCS =	main.c sim-fast.c sim-safe.c sim-cache.c sim-profile.c \
 	target-alpha/alpha.c target-alpha/loader.c target-alpha/syscall.c \
 	target-alpha/symbol.c
 
-HDRS =	syscall.h memory.h regs.h sim.h loader.h cache.h bpred.h ptrace.h \
+HDRS =	syscall.h memory.h regs.h sim.h loader.h cache.h bpred.h ptrace.h LVPred.h spred.h\
 	eventq.h resource.h endian.h dlite.h symbol.h eval.h bitmap.h \
 	eio.h range.h version.h endian.h misc.h \
 	target-pisa/pisa.h target-pisa/pisabig.h target-pisa/pisalittle.h \
@@ -357,7 +357,8 @@ OBJS =	main.$(OEXT) syscall.$(OEXT) memory.$(OEXT) regs.$(OEXT) \
 #
 PROGS = sim-fast$(EEXT) sim-safe$(EEXT) sim-eio$(EEXT) \
 	sim-bpred$(EEXT) sim-profile$(EEXT) \
-	sim-cheetah$(EEXT) sim-cache$(EEXT) sim-outorder$(EEXT)
+	sim-cheetah$(EEXT) sim-cache$(EEXT) sim-outorder$(EEXT) \
+	sim-LVPred$(EEXT) sim-spred$(EEXT) 
 
 #
 # all targets, NOTE: library ordering is important...
@@ -433,6 +434,12 @@ sim-eio$(EEXT):	sysprobe$(EEXT) sim-eio.$(OEXT) $(OBJS) libexo/libexo.$(LEXT)
 
 sim-bpred$(EEXT):	sysprobe$(EEXT) sim-bpred.$(OEXT) bpred.$(OEXT) $(OBJS) libexo/libexo.$(LEXT)
 	$(CC) -o sim-bpred$(EEXT) $(CFLAGS) sim-bpred.$(OEXT) bpred.$(OEXT) $(OBJS) libexo/libexo.$(LEXT) $(MLIBS)
+	
+sim-LVPred$(EEXT):	sysprobe$(EEXT) sim-LVPred.$(OEXT) LVPred.$(OEXT) $(OBJS) libexo/libexo.$(LEXT)
+	$(CC) -o sim-LVPred$(EEXT) $(CFLAGS) sim-LVPred.$(OEXT) LVPred.$(OEXT) $(OBJS) libexo/libexo.$(LEXT) $(MLIBS)
+	
+sim-spred$(EEXT):	sysprobe$(EEXT) sim-spred.$(OEXT) spred.$(OEXT) $(OBJS) libexo/libexo.$(LEXT)
+	$(CC) -o sim-spred$(EEXT) $(CFLAGS) sim-spred.$(OEXT) spred.$(OEXT) $(OBJS) libexo/libexo.$(LEXT) $(MLIBS)
 
 sim-cheetah$(EEXT):	sysprobe$(EEXT) sim-cheetah.$(OEXT) $(OBJS) libcheetah/libcheetah.$(LEXT) libexo/libexo.$(LEXT)
 	$(CC) -o sim-cheetah$(EEXT) $(CFLAGS) sim-cheetah.$(OEXT) $(OBJS) libcheetah/libcheetah.$(LEXT) libexo/libexo.$(LEXT) $(MLIBS)
@@ -489,6 +496,16 @@ sim-tests sim-tests-nt: sysprobe$(EEXT) $(PROGS)
 	cd tests $(CS) \
 	$(MAKE) "MAKE=$(MAKE)" "RM=$(RM)" "ENDIAN=$(ENDIAN)" tests \
 		"DIFF=$(DIFF)" "SIM_DIR=.." "SIM_BIN=sim-bpred$(EEXT)" \
+		"X=$(X)" "CS=$(CS)" $(CS) \
+	cd ..
+	cd tests $(CS) \
+	$(MAKE) "MAKE=$(MAKE)" "RM=$(RM)" "ENDIAN=$(ENDIAN)" tests \
+		"DIFF=$(DIFF)" "SIM_DIR=.." "SIM_BIN=sim-spred$(EEXT)" \
+		"X=$(X)" "CS=$(CS)" $(CS) \
+	cd ..
+	cd tests $(CS) \
+	$(MAKE) "MAKE=$(MAKE)" "RM=$(RM)" "ENDIAN=$(ENDIAN)" tests \
+		"DIFF=$(DIFF)" "SIM_DIR=.." "SIM_BIN=sim-LVPred$(EEXT)" \
 		"X=$(X)" "CS=$(CS)" $(CS) \
 	cd ..
 	cd tests $(CS) \
