@@ -19,23 +19,22 @@ public partial class MainWindow : Gtk.Window
 
     protected void get_sim_elements()
     {
-        sim_data = new SimData();
-        
     }
 
     protected void startButton_OnClick(object sender, EventArgs e)
     {
         //Start Conncetion with the details from UI
+        sim_data = new SimData();
         string hostname = hostname_textbox.Text;
         int port = Convert.ToInt32(port_textbox.Text);
 
-        //try {
-        //    Consumer.start_connection(hostname, port);
-        //}
-        //catch
-        //{
-        //    return;
-        //}
+        try {
+            Consumer.start_connection(hostname, port);
+        }
+        catch
+        {
+            return;
+        }
 
         //Get Details from text boxes
         //Benchmark
@@ -57,6 +56,8 @@ public partial class MainWindow : Gtk.Window
         sim_data.Mplat = branch_latency_textbox.Text;
         sim_data.RUU = ruu_size_textbox.Text;
         sim_data.LSQ = lsq_size_textbox.Text;
+
+        Consumer.send_command_to_server(sim_data.getCommand());
     }
 
     protected void CacheType_onChange(object sender, EventArgs e)
