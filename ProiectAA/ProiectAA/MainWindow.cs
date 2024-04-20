@@ -25,9 +25,38 @@ public partial class MainWindow : Gtk.Window
 
     protected void startButton_OnClick(object sender, EventArgs e)
     {
-        //MessageDialog dialog = new MessageDialog(this, DialogFlags.DestroyWithParent, MessageType.Question, ButtonsType.YesNo, "Aolo ai belit pula");
+        //Start Conncetion with the details from UI
+        string hostname = hostname_textbox.Text;
+        int port = Convert.ToInt32(port_textbox.Text);
 
-        //dialog.Run();
+        //try {
+        //    Consumer.start_connection(hostname, port);
+        //}
+        //catch
+        //{
+        //    return;
+        //}
+
+        //Get Details from text boxes
+        //Benchmark
+        sim_data.Benchmark = benchmark_combobox.ActiveText;
+
+
+        //Get Cache Details
+        sim_data.CacheType = cache_type_combobox.ActiveText;
+        sim_data.CacheSets = sets_textbox.Text;
+        sim_data.CacheBlockSize = blocksize_textbox.Text;
+        sim_data.CacheAsoc = asoc_textbox.Text;
+
+
+        //Get Sim Details
+        sim_data.NrInstructions = nr_instructions_textbox.Text;
+        sim_data.IssueInOrder = cache_type_combobox.ActiveText;
+        sim_data.IssueWidth = issue_width_textbox.Text;
+        sim_data.IFQsize = if_queuesize_textbox.Text;
+        sim_data.Mplat = branch_latency_textbox.Text;
+        sim_data.RUU = ruu_size_textbox.Text;
+        sim_data.LSQ = lsq_size_textbox.Text;
     }
 
     protected void CacheType_onChange(object sender, EventArgs e)

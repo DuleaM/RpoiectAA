@@ -6,7 +6,7 @@
   <import>
     <widget-library name="../bin/Debug/ProiectAA.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="1431 653">
+  <widget class="Gtk.Window" id="MainWindow" design-size="1431 633">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -100,10 +100,9 @@
             <property name="MemberName">t</property>
             <property name="IsTextCombo">True</property>
             <property name="Items" translatable="yes">dl1
-dl2
+ul2
 il1</property>
             <property name="Active">0</property>
-            <signal name="Changed" handler="CacheType_onChange" />
           </widget>
           <packing>
             <property name="X">90</property>
@@ -177,6 +176,203 @@ il1</property>
           <packing>
             <property name="X">15</property>
             <property name="Y">264</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="nr_instructions_textbox">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">5000000</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">616</property>
+            <property name="Y">127</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="issue_width_textbox">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">4</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">616</property>
+            <property name="Y">200</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="if_queuesize_textbox">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">4</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">616</property>
+            <property name="Y">239</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="branch_latency_textbox">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">3</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">616</property>
+            <property name="Y">278</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label13">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Branch Miss-Pred Latency</property>
+          </widget>
+          <packing>
+            <property name="X">462</property>
+            <property name="Y">282</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label12">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">IF Queue Size</property>
+          </widget>
+          <packing>
+            <property name="X">464</property>
+            <property name="Y">243</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label11">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Issue Width</property>
+          </widget>
+          <packing>
+            <property name="X">463</property>
+            <property name="Y">205</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label10">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Issue InOrder</property>
+          </widget>
+          <packing>
+            <property name="X">463</property>
+            <property name="Y">169</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label9">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Nr. Of Instructions</property>
+          </widget>
+          <packing>
+            <property name="X">461</property>
+            <property name="Y">133</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label8">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Simulator Details</property>
+          </widget>
+          <packing>
+            <property name="X">459</property>
+            <property name="Y">91</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBox" id="combobox2">
+            <property name="MemberName" />
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes">true
+false</property>
+            <property name="Active">0</property>
+          </widget>
+          <packing>
+            <property name="X">616</property>
+            <property name="Y">162</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label14">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">RUU Size</property>
+          </widget>
+          <packing>
+            <property name="X">459</property>
+            <property name="Y">323</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="ruu_size_textbox">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">16</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">616</property>
+            <property name="Y">320</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="lsq_size_textbox">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">LSQ Size</property>
+          </widget>
+          <packing>
+            <property name="X">459</property>
+            <property name="Y">368</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry12">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">8</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">615</property>
+            <property name="Y">360</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label16">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Benchmark</property>
+          </widget>
+          <packing>
+            <property name="X">501</property>
+            <property name="Y">16</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBox" id="benchmark_combobox">
+            <property name="MemberName" />
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes">li.ss
+su2cor.ss
+swim.ss
+tomcatv.ss
+wave5.ss</property>
+            <property name="Active">0</property>
+          </widget>
+          <packing>
+            <property name="X">584</property>
+            <property name="Y">9</property>
           </packing>
         </child>
       </widget>
