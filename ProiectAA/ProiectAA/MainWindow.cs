@@ -55,7 +55,6 @@ public partial class MainWindow : Gtk.Window
         sim_data.IFQsize = if_queuesize_textbox.Text;
         sim_data.Mplat = branch_latency_textbox.Text;
         sim_data.RUU = ruu_size_textbox.Text;
-        sim_data.LSQ = lsq_size_textbox.Text;
 
         Consumer.send_command_to_server(sim_data.getCommand());
     }

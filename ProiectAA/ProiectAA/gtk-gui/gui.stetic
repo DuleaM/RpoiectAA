@@ -313,29 +313,6 @@ false</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Label" id="label22">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">LSQ Size</property>
-          </widget>
-          <packing>
-            <property name="X">459</property>
-            <property name="Y">368</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Entry" id="lsq_size_textbox">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Text" translatable="yes">8</property>
-            <property name="IsEditable">True</property>
-            <property name="InvisibleChar">•</property>
-          </widget>
-          <packing>
-            <property name="X">615</property>
-            <property name="Y">360</property>
-          </packing>
-        </child>
-        <child>
           <widget class="Gtk.Label" id="label16">
             <property name="MemberName" />
             <property name="LabelProp" translatable="yes">Benchmark</property>
