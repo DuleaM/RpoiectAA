@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.ItemProperties.ProiectAA PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ProiectAA/MainWindow.cs">
     <Files>
-      <File FileName="ProiectAA/MainWindow.cs" Line="22" Column="34" />
-      <File FileName="ProiectAA/Consumer.cs" Line="23" Column="10" />
-      <File FileName="ProiectAA/SimData.cs" Line="10" Column="37" NotebookId="1" />
+      <File FileName="ProiectAA/Consumer.cs" Line="25" Column="28" />
+      <File FileName="ProiectAA/MainWindow.cs" Line="26" Column="52" />
+      <File FileName="ProiectAA/SimData.cs" Line="36" Column="26" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,9 +16,6 @@
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

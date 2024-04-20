@@ -323,7 +323,7 @@ false</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Entry" id="entry12">
+          <widget class="Gtk.Entry" id="lsq_size_textbox1">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Text" translatable="yes">8</property>
