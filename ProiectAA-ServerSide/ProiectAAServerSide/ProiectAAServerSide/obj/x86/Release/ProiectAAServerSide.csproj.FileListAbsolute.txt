@@ -5,3 +5,7 @@
 /home/licenta/AA/PROIECT/RpoiectAA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Release/ProiectAAServerSide.csproj.AssemblyReference.cache
 /home/licenta/AA/PROIECT/RpoiectAA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Release/ProiectAAServerSide.csproj.CoreCompileInputs.cache
 /home/licenta/AA/PROIECT/RpoiectAA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Release/ProiectAAServerSide.exe
+/home/licenta/AA/RpoiectAA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/bin/Release/ProiectAAServerSide.exe
+/home/licenta/AA/RpoiectAA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Release/ProiectAAServerSide.csproj.AssemblyReference.cache
+/home/licenta/AA/RpoiectAA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Release/ProiectAAServerSide.csproj.CoreCompileInputs.cache
+/home/licenta/AA/RpoiectAA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Release/ProiectAAServerSide.exe

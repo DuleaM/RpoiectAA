@@ -62,11 +62,8 @@ namespace ProiectAAServerSide
             string outputDir = "outputs";
             string ssDir = "benchs/ss";
             string inDir = "benchs/in";
-
-            // string projectPath = Directory.GetCurrentDirectory();
-            // string simPath = Path.Combine(projectPath, "sim/sim-outorder");
-
             string outputFilename = generateOutputFilename(outputDir);
+
 
             // NETWORK STUFF
             TcpClient client = (TcpClient)obj;
@@ -75,33 +72,60 @@ namespace ProiectAAServerSide
             StreamReader streamReader = new StreamReader(stream);
             StreamWriter streamWriter = new StreamWriter(stream);
 
+
             // ARGS RECEIVED FROM CLIENT
             string sim_args_raw = streamReader.ReadLine();
 
             int ssIndex = sim_args_raw.LastIndexOf("/");
             string benchmark = sim_args_raw.Substring(ssIndex + 1);
 
+
+            // SIM ARGS
             string sim_args = sim_args_raw.Replace("{OutputFile}", Path.Combine(outputDir, outputFilename))
                                            .Replace("{benchmark_path}", ssDir)
-                                           + $" < {inDir}/{benchmark}";
+                                           + $" < {inDir}/{benchmark.Replace(".ss", ".in")}";
+
+            string sim_executable = "/home/licenta/AA/RpoiectAA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/bin/Release/sim/sim-outorder";
+
+            string bash_cmd = sim_executable + " " + sim_args;
 
             Console.WriteLine("\n[+] Received args: " + sim_args_raw);
             Console.WriteLine("\n[+] Will execute: sim-outorder " + sim_args);
 
             try
             {
+                string mostRecentOutput = "";
                 ProcessStartInfo simulate = new ProcessStartInfo();
-                simulate.FileName = "/home/licenta/AA/PROIECT/RpoiectAA/ProiectAA-ServerSide/ProiectAAServerSide/sim/sim-outorder";
-                simulate.Arguments = $"{sim_args}";
+                simulate.FileName = "/bin/bash";
+                simulate.Arguments = $"-c \"{bash_cmd}\"";
                 simulate.UseShellExecute = false;
-                simulate.RedirectStandardOutput = true;
-                simulate.RedirectStandardError = true;
+
 
                 using (Process process = Process.Start(simulate))
                 {
-                    //streamWriter.WriteLine(output);
-                    //streamWriter.Flush();
+                    process.WaitForExit();
+                    mostRecentOutput = getLastCreatedFile(outputDir);
+                    if (process.ExitCode == 0)
+                    {
+                        Console.WriteLine("\n[+] Simulation completed successfully.");
+                        Console.WriteLine($"[+] Results written to {mostRecentOutput}.\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n[-] ERR: Simulation FAILED.");
+                    }
                 }
+
+                using (StreamReader reader = new StreamReader(mostRecentOutput))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        streamWriter.WriteLine(line);
+                    }
+                }
+                streamWriter.Flush();
+                Console.WriteLine("\n[+] Simulation results were sent back to the requester.");
             }
             catch (Exception e)
             {
