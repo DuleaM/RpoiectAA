@@ -1,3 +1,7 @@
 /home/licenta/AA/PROIECT/RpoiectAA/ProiectAA/ProiectAA/bin/Release/ProiectAA.exe
 /home/licenta/AA/PROIECT/RpoiectAA/ProiectAA/ProiectAA/obj/x86/Release/ProiectAA.csproj.CoreCompileInputs.cache
 /home/licenta/AA/PROIECT/RpoiectAA/ProiectAA/ProiectAA/obj/x86/Release/ProiectAA.exe
+/home/dulea/Documents/University/ProieftAF/RpoiectAA/ProiectAA/ProiectAA/bin/Release/ProiectAA.exe
+/home/dulea/Documents/University/ProieftAF/RpoiectAA/ProiectAA/ProiectAA/obj/x86/Release/ProiectAA.csproj.AssemblyReference.cache
+/home/dulea/Documents/University/ProieftAF/RpoiectAA/ProiectAA/ProiectAA/obj/x86/Release/ProiectAA.csproj.CoreCompileInputs.cache
+/home/dulea/Documents/University/ProieftAF/RpoiectAA/ProiectAA/ProiectAA/obj/x86/Release/ProiectAA.exe

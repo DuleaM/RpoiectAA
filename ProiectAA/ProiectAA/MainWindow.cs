@@ -50,7 +50,7 @@ public partial class MainWindow : Gtk.Window
 
         //Get Sim Details
         sim_data.NrInstructions = nr_instructions_textbox.Text;
-        sim_data.IssueInOrder = cache_type_combobox.ActiveText;
+        sim_data.IssueInOrder = issue_inorder_option.ActiveText;
         sim_data.IssueWidth = issue_width_textbox.Text;
         sim_data.IFQsize = if_queuesize_textbox.Text;
         sim_data.Mplat = branch_latency_textbox.Text;
