@@ -1,3 +1,7 @@
 /home/licenta/AA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/bin/Release/ProiectAAServerSide.exe
 /home/licenta/AA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Release/ProiectAAServerSide.csproj.CoreCompileInputs.cache
 /home/licenta/AA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Release/ProiectAAServerSide.exe
+/home/dulea/Documents/University/ProiectF/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/bin/Release/ProiectAAServerSide.exe
+/home/dulea/Documents/University/ProiectF/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Release/ProiectAAServerSide.csproj.AssemblyReference.cache
+/home/dulea/Documents/University/ProiectF/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Release/ProiectAAServerSide.csproj.CoreCompileInputs.cache
+/home/dulea/Documents/University/ProiectF/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/obj/x86/Release/ProiectAAServerSide.exe

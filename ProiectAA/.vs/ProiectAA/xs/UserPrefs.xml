@@ -2,10 +2,10 @@
   <MonoDevelop.Ide.ItemProperties.ProiectAA PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ProiectAA/SimData.cs">
     <Files>
-      <File FileName="ProiectAA/Consumer.cs" Line="15" Column="10" />
-      <File FileName="ProiectAA/gtk-gui/MainWindow.cs" Line="61" Column="5" />
-      <File FileName="ProiectAA/MainWindow.cs" Line="61" Column="5" />
-      <File FileName="ProiectAA/SimData.cs" Line="37" Column="9" NotebookId="1" />
+      <File FileName="ProiectAA/Consumer.cs" Line="15" Column="1" />
+      <File FileName="ProiectAA/gtk-gui/MainWindow.cs" Line="61" Column="1" />
+      <File FileName="ProiectAA/MainWindow.cs" Line="61" Column="1" />
+      <File FileName="ProiectAA/SimData.cs" Line="37" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
