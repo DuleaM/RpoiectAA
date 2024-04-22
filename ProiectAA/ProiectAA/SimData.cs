@@ -4,7 +4,7 @@ namespace ProiectAA
     public class SimData
     {
         public string getCommand() {
-            string command = "-redir:sim {OutputFile}.res -max:inst {NrInstructions} -cache:{CacheType} {CacheDetails} -fetch:ifqsize {IFQsize} -fetch:mplat {Mplat} -issue:inorder {IssueInOrder} -issue_width {IssueWidth} -ruu:size {RUU} {benchmark_path}/{benchmark}";
+            string command = "-redir:sim {OutputFile}.res -max:inst {NrInstructions} -cache:{CacheType} {CacheDetails} -fetch:ifqsize {IFQsize} -fetch:mplat {Mplat} -issue:inorder {IssueInOrder} -issue:width {IssueWidth} -ruu:size {RUU} {benchmark_path}/{benchmark}";
 
             command = command.Replace("{NrInstructions}", NrInstructions)
                 .Replace("{CacheType}", CacheType)
