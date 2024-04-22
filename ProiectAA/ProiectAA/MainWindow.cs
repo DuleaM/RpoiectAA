@@ -1,6 +1,8 @@
 ﻿using ProiectAA;
 using System;
 using Gtk;
+using System.Threading;
+using System.Threading.Tasks;
 
 public partial class MainWindow : Gtk.Window
 {
@@ -24,6 +26,8 @@ public partial class MainWindow : Gtk.Window
     protected void startButton_OnClick(object sender, EventArgs e)
     {
         //Start Conncetion with the details from UI
+        serverResults.Buffer.Clear();
+
         sim_data = new SimData();
         string hostname = hostname_textbox.Text;
         int port = Convert.ToInt32(port_textbox.Text);
@@ -50,14 +54,18 @@ public partial class MainWindow : Gtk.Window
 
         //Get Sim Details
         sim_data.NrInstructions = nr_instructions_textbox.Text;
-        sim_data.IssueInOrder = cache_type_combobox.ActiveText;
+        sim_data.IssueInOrder = issue_order_type.ActiveText;
         sim_data.IssueWidth = issue_width_textbox.Text;
         sim_data.IFQsize = if_queuesize_textbox.Text;
         sim_data.Mplat = branch_latency_textbox.Text;
         sim_data.RUU = ruu_size_textbox.Text;
 
         Consumer.send_command_to_server(sim_data.getCommand());
-    }
+        Consumer.threadReceiveMessage.Start();
+        Consumer.threadReceiveMessage.Join();
+        serverResults.Buffer.Text = Consumer.server_output;
+
+    }   
 
     protected void CacheType_onChange(object sender, EventArgs e)
     {
@@ -79,5 +87,9 @@ public partial class MainWindow : Gtk.Window
             asoc_textbox.Text = "1";
         }
 
+    }
+
+    protected void OnStartButtonActivated(object sender, EventArgs e)
+    {
     }
 }

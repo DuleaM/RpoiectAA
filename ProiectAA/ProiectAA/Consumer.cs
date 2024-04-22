@@ -1,4 +1,6 @@
 ﻿using System;
+
+using Gtk;
 using System.IO;
 using System.Net.Sockets;
 using System.Threading;
@@ -11,7 +13,9 @@ namespace ProiectAA
         private static NetworkStream stream = null;
         private static StreamReader streamReader = null;
         private static StreamWriter streamWriter = null;
-        private static Thread wait_response_thread = null;
+
+        public static string server_output { get; set; }
+        public static Thread threadReceiveMessage = new Thread(new ThreadStart(get_output_from_server));
 
         public static void start_connection(string hostname, int port)
         {
@@ -34,10 +38,16 @@ namespace ProiectAA
 
         }
 
-        public static string get_output_from_server()
+        public static void get_output_from_server()
         {
-            string output = streamReader.ReadLine();
-            return output;
+            server_output = "";
+            
+            while (true)
+            {
+                server_output = streamReader.ReadLine();
+
+            }
+
         }
     }
 }

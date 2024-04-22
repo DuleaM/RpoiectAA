@@ -51,21 +51,21 @@ public partial class MainWindow
 
 	private global::Gtk.Label label8;
 
-	private global::Gtk.ComboBox combobox2;
+	private global::Gtk.ComboBox issue_order_type;
 
 	private global::Gtk.Label label14;
 
 	private global::Gtk.Entry ruu_size_textbox;
-
-	private global::Gtk.Label lsq_size_textbox;
-
-	private global::Gtk.Entry entry12;
 
 	private global::Gtk.Label label16;
 
 	private global::Gtk.ComboBox benchmark_combobox;
 
 	private global::Gtk.Button startButton;
+
+	private global::Gtk.ScrolledWindow GtkScrolledWindow;
+
+	private global::Gtk.TextView serverResults;
 
 	protected virtual void Build()
 	{
@@ -293,13 +293,13 @@ public partial class MainWindow
 		w23.X = 459;
 		w23.Y = 91;
 		// Container child fixed1.Gtk.Fixed+FixedChild
-		this.combobox2 = global::Gtk.ComboBox.NewText();
-		this.combobox2.AppendText(global::Mono.Unix.Catalog.GetString("true"));
-		this.combobox2.AppendText(global::Mono.Unix.Catalog.GetString("false"));
-		this.combobox2.Name = "combobox2";
-		this.combobox2.Active = 0;
-		this.fixed1.Add(this.combobox2);
-		global::Gtk.Fixed.FixedChild w24 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.combobox2]));
+		this.issue_order_type = global::Gtk.ComboBox.NewText();
+		this.issue_order_type.AppendText(global::Mono.Unix.Catalog.GetString("true"));
+		this.issue_order_type.AppendText(global::Mono.Unix.Catalog.GetString("false"));
+		this.issue_order_type.Name = "issue_order_type";
+		this.issue_order_type.Active = 0;
+		this.fixed1.Add(this.issue_order_type);
+		global::Gtk.Fixed.FixedChild w24 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.issue_order_type]));
 		w24.X = 616;
 		w24.Y = 162;
 		// Container child fixed1.Gtk.Fixed+FixedChild
@@ -322,32 +322,13 @@ public partial class MainWindow
 		w26.X = 616;
 		w26.Y = 320;
 		// Container child fixed1.Gtk.Fixed+FixedChild
-		this.lsq_size_textbox = new global::Gtk.Label();
-		this.lsq_size_textbox.Name = "lsq_size_textbox";
-		this.lsq_size_textbox.LabelProp = global::Mono.Unix.Catalog.GetString("LSQ Size");
-		this.fixed1.Add(this.lsq_size_textbox);
-		global::Gtk.Fixed.FixedChild w27 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.lsq_size_textbox]));
-		w27.X = 459;
-		w27.Y = 368;
-		// Container child fixed1.Gtk.Fixed+FixedChild
-		this.entry12 = new global::Gtk.Entry();
-		this.entry12.CanFocus = true;
-		this.entry12.Name = "entry12";
-		this.entry12.Text = global::Mono.Unix.Catalog.GetString("8");
-		this.entry12.IsEditable = true;
-		this.entry12.InvisibleChar = '•';
-		this.fixed1.Add(this.entry12);
-		global::Gtk.Fixed.FixedChild w28 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entry12]));
-		w28.X = 615;
-		w28.Y = 360;
-		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.label16 = new global::Gtk.Label();
 		this.label16.Name = "label16";
 		this.label16.LabelProp = global::Mono.Unix.Catalog.GetString("Benchmark");
 		this.fixed1.Add(this.label16);
-		global::Gtk.Fixed.FixedChild w29 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label16]));
-		w29.X = 501;
-		w29.Y = 16;
+		global::Gtk.Fixed.FixedChild w27 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label16]));
+		w27.X = 501;
+		w27.Y = 16;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.benchmark_combobox = global::Gtk.ComboBox.NewText();
 		this.benchmark_combobox.AppendText(global::Mono.Unix.Catalog.GetString("li.ss"));
@@ -358,9 +339,9 @@ public partial class MainWindow
 		this.benchmark_combobox.Name = "benchmark_combobox";
 		this.benchmark_combobox.Active = 0;
 		this.fixed1.Add(this.benchmark_combobox);
-		global::Gtk.Fixed.FixedChild w30 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.benchmark_combobox]));
-		w30.X = 584;
-		w30.Y = 9;
+		global::Gtk.Fixed.FixedChild w28 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.benchmark_combobox]));
+		w28.X = 584;
+		w28.Y = 9;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.startButton = new global::Gtk.Button();
 		this.startButton.CanFocus = true;
@@ -368,16 +349,29 @@ public partial class MainWindow
 		this.startButton.UseUnderline = true;
 		this.startButton.Label = global::Mono.Unix.Catalog.GetString("Start");
 		this.fixed1.Add(this.startButton);
-		global::Gtk.Fixed.FixedChild w31 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.startButton]));
-		w31.X = 760;
-		w31.Y = 11;
+		global::Gtk.Fixed.FixedChild w29 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.startButton]));
+		w29.X = 760;
+		w29.Y = 11;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow();
+		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
+		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
+		// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
+		this.serverResults = new global::Gtk.TextView();
+		this.serverResults.CanFocus = true;
+		this.serverResults.Name = "serverResults";
+		this.GtkScrolledWindow.Add(this.serverResults);
+		this.fixed1.Add(this.GtkScrolledWindow);
+		global::Gtk.Fixed.FixedChild w31 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.GtkScrolledWindow]));
+		w31.X = 48;
+		w31.Y = 391;
 		this.Add(this.fixed1);
 		if ((this.Child != null))
 		{
 			this.Child.ShowAll();
 		}
 		this.DefaultWidth = 823;
-		this.DefaultHeight = 408;
+		this.DefaultHeight = 700;
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
 		this.startButton.Clicked += new global::System.EventHandler(this.startButton_OnClick);
