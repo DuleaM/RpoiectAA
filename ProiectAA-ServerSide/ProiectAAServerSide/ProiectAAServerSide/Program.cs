@@ -4,6 +4,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Threading;
 using System.Diagnostics;
+using System.Linq;
 
 namespace ProiectAAServerSide
 {
@@ -37,37 +38,74 @@ namespace ProiectAAServerSide
             }
         }
 
+        static string generateOutputFilename(string outputDir)
+        {
+            string currentDateHour = DateTime.Now.ToString("ddMMyyyy_HH:mm:ss");
+            return $"output_{currentDateHour}";
+        }
+
+        static string getLastCreatedFile(string path)
+        {
+            string[] files = Directory.GetFiles(path, "output_*.res").OrderByDescending(f => new FileInfo(f).CreationTime).ToArray();
+
+            if (files.Length > 0)
+            {
+                return files[0];
+            }
+            return null;
+        }
+
+
         public static void handleClientRequest(object obj)
         {
+            //PATHS, FILENAMES
+            string outputDir = "outputs";
+            string ssDir = "benchs/ss";
+            string inDir = "benchs/in";
+
+            // string projectPath = Directory.GetCurrentDirectory();
+            // string simPath = Path.Combine(projectPath, "sim/sim-outorder");
+
+            string outputFilename = generateOutputFilename(outputDir);
+
+            // NETWORK STUFF
             TcpClient client = (TcpClient)obj;
             NetworkStream stream = client.GetStream();
 
             StreamReader streamReader = new StreamReader(stream);
             StreamWriter streamWriter = new StreamWriter(stream);
 
-            string command = streamReader.ReadLine();
-            Console.WriteLine("Received command: " + command);
+            // ARGS RECEIVED FROM CLIENT
+            string sim_args_raw = streamReader.ReadLine();
+
+            int ssIndex = sim_args_raw.LastIndexOf("/");
+            string benchmark = sim_args_raw.Substring(ssIndex + 1);
+
+            string sim_args = sim_args_raw.Replace("{OutputFile}", Path.Combine(outputDir, outputFilename))
+                                           .Replace("{benchmark_path}", ssDir)
+                                           + $" < {inDir}/{benchmark}";
+
+            Console.WriteLine("\n[+] Received args: " + sim_args_raw);
+            Console.WriteLine("\n[+] Will execute: sim-outorder " + sim_args);
 
             try
             {
                 ProcessStartInfo simulate = new ProcessStartInfo();
-                simulate.FileName = "/bin/bash";
-                simulate.Arguments = "-c \"ls\"";
+                simulate.FileName = "/home/licenta/AA/PROIECT/RpoiectAA/ProiectAA-ServerSide/ProiectAAServerSide/sim/sim-outorder";
+                simulate.Arguments = $"{sim_args}";
                 simulate.UseShellExecute = false;
                 simulate.RedirectStandardOutput = true;
+                simulate.RedirectStandardError = true;
 
                 using (Process process = Process.Start(simulate))
                 {
-                    string output = process.StandardOutput.ReadToEnd();
-                    // Console.WriteLine("Output of ls: " + output);
-
-                    streamWriter.WriteLine(output);
-                    streamWriter.Flush();
+                    //streamWriter.WriteLine(output);
+                    //streamWriter.Flush();
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine("Eroare: " + e.Message);
+                Console.WriteLine("\n[-] ERR: " + e.Message);
             }
             finally
             {

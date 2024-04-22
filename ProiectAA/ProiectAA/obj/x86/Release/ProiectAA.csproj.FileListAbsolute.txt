@@ -1,0 +1,3 @@
+/home/licenta/AA/PROIECT/RpoiectAA/ProiectAA/ProiectAA/bin/Release/ProiectAA.exe
+/home/licenta/AA/PROIECT/RpoiectAA/ProiectAA/ProiectAA/obj/x86/Release/ProiectAA.csproj.CoreCompileInputs.cache
+/home/licenta/AA/PROIECT/RpoiectAA/ProiectAA/ProiectAA/obj/x86/Release/ProiectAA.exe

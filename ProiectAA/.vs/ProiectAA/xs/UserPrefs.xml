@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{E6BC436F-16C9-431E-9FA0-FDD9ECB7E00E}|Default">
   <MonoDevelop.Ide.ItemProperties.ProiectAA PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProiectAA/SimData.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProiectAA/Consumer.cs">
     <Files>
-      <File FileName="ProiectAA/Consumer.cs" Line="15" Column="10" />
-      <File FileName="ProiectAA/gtk-gui/MainWindow.cs" Line="61" Column="5" />
-      <File FileName="ProiectAA/MainWindow.cs" Line="61" Column="5" />
-      <File FileName="ProiectAA/SimData.cs" Line="37" Column="9" NotebookId="1" />
+      <File FileName="ProiectAA/Consumer.cs" Line="13" Column="9" />
+      <File FileName="ProiectAA/gtk-gui/MainWindow.cs" Line="61" Column="1" />
+      <File FileName="ProiectAA/MainWindow.cs" Line="61" Column="1" />
+      <File FileName="ProiectAA/SimData.cs" Line="37" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +13,7 @@
           <Node name="ProiectAA" expanded="True">
             <Node name="ProiectAA" expanded="True">
               <Node name="UserInterface" expanded="True" />
-              <Node name="SimData.cs" selected="True" />
+              <Node name="Consumer.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -21,7 +21,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

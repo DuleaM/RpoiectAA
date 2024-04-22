@@ -4,3 +4,9 @@
 /home/dulea/Documents/University/ProiectF/ProiectAA/ProiectAA/obj/x86/Debug/ProiectAA.csproj.CoreCompileInputs.cache
 /home/dulea/Documents/University/ProiectF/ProiectAA/ProiectAA/obj/x86/Debug/ProiectAA.exe
 /home/dulea/Documents/University/ProiectF/ProiectAA/ProiectAA/obj/x86/Debug/ProiectAA.pdb
+/home/licenta/AA/PROIECT/RpoiectAA/ProiectAA/ProiectAA/bin/Debug/ProiectAA.exe
+/home/licenta/AA/PROIECT/RpoiectAA/ProiectAA/ProiectAA/bin/Debug/ProiectAA.pdb
+/home/licenta/AA/PROIECT/RpoiectAA/ProiectAA/ProiectAA/obj/x86/Debug/ProiectAA.csproj.AssemblyReference.cache
+/home/licenta/AA/PROIECT/RpoiectAA/ProiectAA/ProiectAA/obj/x86/Debug/ProiectAA.csproj.CoreCompileInputs.cache
+/home/licenta/AA/PROIECT/RpoiectAA/ProiectAA/ProiectAA/obj/x86/Debug/ProiectAA.exe
+/home/licenta/AA/PROIECT/RpoiectAA/ProiectAA/ProiectAA/obj/x86/Debug/ProiectAA.pdb
