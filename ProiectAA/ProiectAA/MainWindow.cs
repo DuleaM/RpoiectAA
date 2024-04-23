@@ -86,4 +86,11 @@ public partial class MainWindow : Gtk.Window
         }
 
     }
+
+    protected void helpClick(object sender, EventArgs e)
+    {
+        string program = "evince";
+        string filepath = "/home/dulea/Documents/University/RpoiectAA/ProiectAA/ProiectAA/instructions.pdf";
+        System.Diagnostics.Process.Start(program, filepath);
+    }
 }

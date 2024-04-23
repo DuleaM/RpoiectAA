@@ -67,6 +67,8 @@ public partial class MainWindow
 
 	private global::Gtk.TextView serverOutput;
 
+	private global::Gtk.Button helpButton;
+
 	protected virtual void Build()
 	{
 		global::Stetic.Gui.Initialize(this);
@@ -76,6 +78,7 @@ public partial class MainWindow
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.fixed1 = new global::Gtk.Fixed();
+		this.fixed1.Name = "fixed1";
 		this.fixed1.HasWindow = false;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.hostname_textbox = new global::Gtk.Entry();
@@ -364,6 +367,16 @@ public partial class MainWindow
 		global::Gtk.Fixed.FixedChild w31 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.GtkScrolledWindow]));
 		w31.X = 10;
 		w31.Y = 416;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.helpButton = new global::Gtk.Button();
+		this.helpButton.CanFocus = true;
+		this.helpButton.Name = "helpButton";
+		this.helpButton.UseUnderline = true;
+		this.helpButton.Label = global::Mono.Unix.Catalog.GetString("Help");
+		this.fixed1.Add(this.helpButton);
+		global::Gtk.Fixed.FixedChild w32 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.helpButton]));
+		w32.X = 741;
+		w32.Y = 54;
 		this.Add(this.fixed1);
 		if ((this.Child != null))
 		{
@@ -375,5 +388,6 @@ public partial class MainWindow
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
 		this.cache_type_combobox.Changed += new global::System.EventHandler(this.CacheType_onChange);
 		this.startButton.Clicked += new global::System.EventHandler(this.startButton_OnClick);
+		this.helpButton.Clicked += new global::System.EventHandler(this.helpClick);
 	}
 }

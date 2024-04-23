@@ -377,6 +377,20 @@ wave5.ss</property>
             <property name="Y">416</property>
           </packing>
         </child>
+        <child>
+          <widget class="Gtk.Button" id="helpButton">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Help</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="helpClick" />
+          </widget>
+          <packing>
+            <property name="X">741</property>
+            <property name="Y">54</property>
+          </packing>
+        </child>
       </widget>
     </child>
   </widget>

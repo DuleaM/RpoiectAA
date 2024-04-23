@@ -62,5 +62,8 @@
     <Compile Include="Consumer.cs" />
     <Compile Include="SimData.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="instructions.pdf" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

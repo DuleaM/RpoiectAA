@@ -2,15 +2,17 @@
   <MonoDevelop.Ide.ItemProperties.ProiectAA PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ProiectAA/MainWindow.cs">
     <Files>
-      <File FileName="ProiectAA/Consumer.cs" Line="14" Column="30" />
-      <File FileName="ProiectAA/MainWindow.cs" Line="29" Column="1" />
+      <File FileName="ProiectAA/Consumer.cs" Line="26" Column="10" />
+      <File FileName="ProiectAA/MainWindow.cs" Line="82" Column="44" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ProiectAA" expanded="True">
             <Node name="ProiectAA" expanded="True">
+              <Node name="References" expanded="True" />
               <Node name="UserInterface" expanded="True" />
+              <Node name="Properties" expanded="True" />
               <Node name="MainWindow.cs" selected="True" />
             </Node>
           </Node>
