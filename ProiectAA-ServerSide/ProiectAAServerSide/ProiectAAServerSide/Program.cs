@@ -22,7 +22,8 @@ namespace ProiectAAServerSide
                 while (true)
                 {
                     TcpClient client = listener.AcceptTcpClient();
-                    Console.WriteLine("[+] Request confirmed. ");
+                    Console.WriteLine("\n================== [ NEW REQUEST ] ==================");
+                    Console.WriteLine("\n[+] Request confirmed. ");
 
                     Thread handleClient = new Thread(new ParameterizedThreadStart(handleClientRequest));
                     handleClient.Start(client);
@@ -79,13 +80,24 @@ namespace ProiectAAServerSide
             int ssIndex = sim_args_raw.LastIndexOf("/");
             string benchmark = sim_args_raw.Substring(ssIndex + 1);
 
-
             // SIM ARGS
-            string sim_args = sim_args_raw.Replace("{OutputFile}", Path.Combine(outputDir, outputFilename))
+
+            string sim_args = "";
+
+            if (benchmark.Contains("li"))
+            {
+                sim_args = sim_args_raw.Replace("{OutputFile}", Path.Combine(outputDir, outputFilename))
+                                           .Replace("{benchmark_path}", ssDir)
+                                           + $" < {inDir}/{benchmark.Replace(".ss", ".lsp")}";
+            }
+            else
+            {
+                sim_args = sim_args_raw.Replace("{OutputFile}", Path.Combine(outputDir, outputFilename))
                                            .Replace("{benchmark_path}", ssDir)
                                            + $" < {inDir}/{benchmark.Replace(".ss", ".in")}";
+            }
 
-            string sim_executable = "/home/dulea/Documents/University/RpoiectAA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/bin/Release/sim/sim-outorder";
+            string sim_executable = "/home/licenta/AA/RpoiectAA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/bin/Release/sim/sim-outorder";
 
             string bash_cmd = sim_executable + " " + sim_args;
 
@@ -99,20 +111,24 @@ namespace ProiectAAServerSide
                 simulate.FileName = "/bin/bash";
                 simulate.Arguments = $"-c \"{bash_cmd}\"";
                 simulate.UseShellExecute = false;
-
+                simulate.RedirectStandardError = true;
 
                 using (Process process = Process.Start(simulate))
                 {
+                    string processErrorOutput = process.StandardError.ReadToEnd();
+
                     process.WaitForExit();
                     mostRecentOutput = getLastCreatedFile(outputDir);
                     if (process.ExitCode == 0)
                     {
                         Console.WriteLine("\n[+] Simulation completed successfully.");
                         Console.WriteLine($"[+] Results written to {mostRecentOutput}.\n");
+                        Console.WriteLine("[+] Simulation results were sent back to the requester.");
                     }
                     else
                     {
                         Console.WriteLine("\n[-] ERR: Simulation FAILED.");
+                        Console.WriteLine($"\n{processErrorOutput}");
                     }
                 }
 
@@ -125,7 +141,9 @@ namespace ProiectAAServerSide
                     }
                 }
                 streamWriter.Flush();
-                Console.WriteLine("\n[+] Simulation results were sent back to the requester.");
+                Console.WriteLine("\n================== [ END REQUEST ] ==================\n\n");
+                Console.WriteLine("Waiting for new requests ... ");
+
             }
             catch (Exception e)
             {
@@ -142,7 +160,7 @@ namespace ProiectAAServerSide
 
         public static void Main(string[] args)
         {
-            IPAddress IP = IPAddress.Parse("127.0.0.1");
+            IPAddress IP = IPAddress.Parse("0.0.0.0");
             int PORT = 8000;
 
             Thread serverThread = new Thread(() => Run(IP, PORT));
