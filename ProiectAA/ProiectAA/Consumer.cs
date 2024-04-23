@@ -33,7 +33,9 @@ namespace ProiectAA
 
         public static string get_output_from_server()
         {
-            string output = streamReader.ReadLine();
+            string output = "";
+            output = streamReader.ReadToEnd();
+
             return output;
         }
     }

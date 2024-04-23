@@ -1,10 +1,9 @@
 ﻿<Properties StartupConfiguration="{E6BC436F-16C9-431E-9FA0-FDD9ECB7E00E}|Default">
   <MonoDevelop.Ide.ItemProperties.ProiectAA PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProiectAA/Consumer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProiectAA/MainWindow.cs">
     <Files>
-      <File FileName="ProiectAA/Consumer.cs" Line="13" Column="1" />
-      <File FileName="ProiectAA/MainWindow.cs" Line="1" Column="1" />
-      <File FileName="ProiectAA/SimData.cs" Line="37" Column="1" NotebookId="1" />
+      <File FileName="ProiectAA/Consumer.cs" Line="14" Column="30" />
+      <File FileName="ProiectAA/MainWindow.cs" Line="29" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +11,7 @@
           <Node name="ProiectAA" expanded="True">
             <Node name="ProiectAA" expanded="True">
               <Node name="UserInterface" expanded="True" />
-              <Node name="Consumer.cs" selected="True" />
+              <Node name="MainWindow.cs" selected="True" />
             </Node>
           </Node>
         </State>

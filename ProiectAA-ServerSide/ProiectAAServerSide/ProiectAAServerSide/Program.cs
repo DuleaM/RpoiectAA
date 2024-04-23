@@ -85,7 +85,7 @@ namespace ProiectAAServerSide
                                            .Replace("{benchmark_path}", ssDir)
                                            + $" < {inDir}/{benchmark.Replace(".ss", ".in")}";
 
-            string sim_executable = "/home/licenta/AA/RpoiectAA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/bin/Release/sim/sim-outorder";
+            string sim_executable = "/home/dulea/Documents/University/RpoiectAA/ProiectAA-ServerSide/ProiectAAServerSide/ProiectAAServerSide/bin/Release/sim/sim-outorder";
 
             string bash_cmd = sim_executable + " " + sim_args;
 

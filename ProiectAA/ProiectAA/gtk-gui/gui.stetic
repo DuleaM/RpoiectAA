@@ -6,7 +6,7 @@
   <import>
     <widget-library name="../bin/Release/ProiectAA.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="823 408">
+  <widget class="Gtk.Window" id="MainWindow" design-size="823 604">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -89,6 +89,7 @@
 ul2
 il1</property>
             <property name="Active">0</property>
+            <signal name="Changed" handler="CacheType_onChange" />
           </widget>
           <packing>
             <property name="X">90</property>
@@ -350,6 +351,30 @@ wave5.ss</property>
           <packing>
             <property name="X">760</property>
             <property name="Y">11</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.TextView" id="serverOutput">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="Text" translatable="yes" />
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="X">10</property>
+            <property name="Y">416</property>
           </packing>
         </child>
       </widget>

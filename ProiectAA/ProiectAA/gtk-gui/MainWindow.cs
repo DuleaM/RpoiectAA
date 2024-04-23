@@ -63,6 +63,10 @@ public partial class MainWindow
 
 	private global::Gtk.Button startButton;
 
+	private global::Gtk.ScrolledWindow GtkScrolledWindow;
+
+	private global::Gtk.TextView serverOutput;
+
 	protected virtual void Build()
 	{
 		global::Stetic.Gui.Initialize(this);
@@ -72,7 +76,6 @@ public partial class MainWindow
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.fixed1 = new global::Gtk.Fixed();
-		this.fixed1.Name = "fixed1";
 		this.fixed1.HasWindow = false;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.hostname_textbox = new global::Gtk.Entry();
@@ -348,15 +351,29 @@ public partial class MainWindow
 		global::Gtk.Fixed.FixedChild w29 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.startButton]));
 		w29.X = 760;
 		w29.Y = 11;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow();
+		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
+		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
+		// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
+		this.serverOutput = new global::Gtk.TextView();
+		this.serverOutput.CanFocus = true;
+		this.serverOutput.Name = "serverOutput";
+		this.GtkScrolledWindow.Add(this.serverOutput);
+		this.fixed1.Add(this.GtkScrolledWindow);
+		global::Gtk.Fixed.FixedChild w31 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.GtkScrolledWindow]));
+		w31.X = 10;
+		w31.Y = 416;
 		this.Add(this.fixed1);
 		if ((this.Child != null))
 		{
 			this.Child.ShowAll();
 		}
 		this.DefaultWidth = 823;
-		this.DefaultHeight = 408;
+		this.DefaultHeight = 604;
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
+		this.cache_type_combobox.Changed += new global::System.EventHandler(this.CacheType_onChange);
 		this.startButton.Clicked += new global::System.EventHandler(this.startButton_OnClick);
 	}
 }

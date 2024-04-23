@@ -9,6 +9,8 @@ public partial class MainWindow : Gtk.Window
     public MainWindow() : base(Gtk.WindowType.Toplevel)
     {
         Build();
+        serverOutput.WidthRequest = 800;
+        serverOutput.HeightRequest = 300;
     }
 
     protected void OnDeleteEvent(object sender, DeleteEventArgs a)
@@ -23,8 +25,10 @@ public partial class MainWindow : Gtk.Window
 
     protected void startButton_OnClick(object sender, EventArgs e)
     {
+
         //Start Conncetion with the details from UI
         sim_data = new SimData();
+
         string hostname = hostname_textbox.Text;
         int port = Convert.ToInt32(port_textbox.Text);
 
@@ -57,6 +61,8 @@ public partial class MainWindow : Gtk.Window
         sim_data.RUU = ruu_size_textbox.Text;
 
         Consumer.send_command_to_server(sim_data.getCommand());
+        serverOutput.Buffer.Text = Consumer.get_output_from_server();
+
     }
 
     protected void CacheType_onChange(object sender, EventArgs e)
