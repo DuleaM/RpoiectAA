@@ -128,7 +128,6 @@ namespace ProiectAAServerSide
                     else
                     {
                         Console.WriteLine("\n[-] ERR: Simulation FAILED.");
-                        Console.WriteLine($"\n{processErrorOutput}");
                     }
                 }
 
